@@ -2,7 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar, IconButton, Badge, Button, MenuItem, Menu, Typography } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 
-import logo from '../../assets/navbar-rope.jpg';
+import logo from '../../assets/rope-icon.svg';
 import useStyles from './styles';
 
 const Navbar = () => {
@@ -12,8 +12,8 @@ const Navbar = () => {
         <div>
             <AppBar position="fixed" className={classes.AppBar} color="inherit">
                 <Toolbar>
-                    <Typography variant="h6" className={classes.title} color="inherit">
-                        <img src={logo} alt="rope" height="25px" className={classes.image} />
+                    <Typography variant="h5" className={classes.title} color="inherit">
+                        <img src={logo} alt="rope" height="50px" className={classes.image} />
                         Rope.com
                     </Typography>
                     <div className={classes.grow} />
