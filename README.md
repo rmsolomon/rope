@@ -1,9 +1,8 @@
-## Getting started
+### Getting started
 
-Clone or download the repository
+Clone or download the repository.
+Make sure you have node.js installed on your machine.
 
 Run:
-### `npm install`
-
-and then:
-### `npm start`
+## `npm install`
+## `npm start`
