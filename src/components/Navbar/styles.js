@@ -1,4 +1,3 @@
-  
 import { makeStyles, fade } from '@material-ui/core/styles';
 
 const drawerWidth = 0;
@@ -19,8 +18,6 @@ export default makeStyles((theme) => ({
   },
   image: {
     marginRight: '15px',
-    // width: '80px',
-    // height: '60px'
   },
   menuButton: {
     marginRight: theme.spacing(2),
