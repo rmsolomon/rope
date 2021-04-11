@@ -3,18 +3,21 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles(() => ({
   root: {
     maxWidth: '100%',
-    marginBottom: '50px',
+    textAlign: 'center',
+    marginTop: '90px',
+    paddingBottom: '30px',
   },
-  media: {
-    height: 0,
-    paddingTop: '56.25%',
+  title: {
+    paddingBottom: '30px',
   },
-  cardActions: {
-    display: 'flex',
-    justifyContent: 'flex-end',
+  dropdown: {
+    paddingTop: '20px',
   },
-  cardContent: {
+  input: {
     display: 'flex',
     justifyContent: 'space-between',
+  },
+  button: {
+    marginTop: '30px',
   },
 }));

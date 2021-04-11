@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { commerce } from './lib/commerce';
-import { Products, Navbar, Cart, BottomNavbar } from './components';
+import { Products, Navbar, Cart, BottomNavbar, ReportBug } from './components';
+import './App.css';
 
 const App = () => {
     const [products, setProducts] = useState([]);
@@ -15,10 +17,28 @@ const App = () => {
         setCart(await commerce.cart.retrieve());
     }
 
-    const handleAddToCart = async (productID, quantity) => {
-        const item = await commerce.cart.add(productID, quantity);
+    const handleAddToCart = async (productId, quantity) => {
+        const { cart } = await commerce.cart.add(productId, quantity);
 
-        setCart(item.cart);
+        setCart(cart);
+    }
+
+    const handleUpdateCartQuantity = async (productId, quantity) => {
+        const { cart } = await commerce.cart.update(productId, { quantity });
+
+        setCart(cart)
+    }
+
+    const handleRemoveFromCart = async (productId) => {
+        const { cart } = await commerce.cart.remove(productId);
+
+        setCart(cart);
+    }
+
+    const handleEmptyCart = async () => {
+        const { cart } = await commerce.cart.empty();
+
+        setCart(cart);
     }
 
     useEffect(() => {
@@ -26,15 +46,28 @@ const App = () => {
         fetchCart();
     }, []);
 
-    console.log(cart);
-
     return (
-        <div>
-            <Navbar totalItems={cart.total_items} />
-            {/* <Products products={products} onAddToCart={handleAddToCart} /> */}
-            <Cart cart={cart} />
-            <BottomNavbar />
-        </div>
+        <Router>
+            <div>
+                <Navbar totalItems={cart.total_items} />
+                <Switch>
+                    <Route exact path="/">
+                        <Products products={products} onAddToCart={handleAddToCart} />
+                    </Route>
+                    <Route exact path="/cart">
+                        <Cart cart={cart} 
+                        handleUpdateCartQuantity={handleUpdateCartQuantity}
+                        handleRemoveFromCart={handleRemoveFromCart}
+                        handleEmptyCart={handleEmptyCart}
+                        />
+                    </Route>   
+                    <Route exact path="/reportbug">
+                        <ReportBug />
+                    </Route>  
+                </Switch>
+                <BottomNavbar />
+            </div>
+        </Router>    
     )
 }
 
