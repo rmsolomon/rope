@@ -23,6 +23,8 @@ export default makeStyles(() => ({
     marginBottom: '30px',
   },
   alert: {
-    width: '50px',
+    width: '10%',
+    display: 'flex',
+    justifyContent: 'center',
   }
 }));
