@@ -2,7 +2,6 @@ import React from 'react';
 import { AppBar, Toolbar, IconButton, Badge, Typography } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 import { Link, useLocation } from 'react-router-dom';
-//MenuItem, Menu,
 
 import logo from '../../assets/rope-icon.svg';
 import useStyles from './styles';

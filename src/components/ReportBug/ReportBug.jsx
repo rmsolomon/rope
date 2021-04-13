@@ -29,9 +29,10 @@ const locations = [
 
 const ReportBug = () => {
     const classes = useStyles();
-    const [name, setName ] = React.useState('');
-    const [location, setLocation ] = React.useState('');
-    const [message, setMessage ] = React.useState('');
+    const [ name, setName ] = React.useState('');
+    const [ location, setLocation ] = React.useState('');
+    const [ message, setMessage ] = React.useState('');
+    const [ showAlert, setShowAlert ] = React.useState(false);
 
     const handleChange = (event) => {
         setLocation(event.target.value);
@@ -40,11 +41,14 @@ const ReportBug = () => {
     function handleSubmit(event) {
         event.preventDefault();
         console.log( 'Name:', name, ",", 'Location:', location, ",", 'Message:', message );
+        setShowAlert(true);
+        setTimeout(function() {
+        setShowAlert(false)
+        }, 3000)
+        setName("")
+        setLocation("")
+        setMessage("")
     }
-
-    // function handleAlert(event) {
-    //     alert('Success!')
-    // } 
     
 return (
     <form className={classes.root} onSubmit={handleSubmit}>
@@ -52,14 +56,17 @@ return (
         <Typography className={classes.title} variant="h4">Report Bug</Typography>
                 <TextField 
                 className={classes.form}
-                label="Name" 
+                required
+                label="Your Name"
+                value={name}
                 onInput={ e=>setName(e.target.value)}
                 >
                 </TextField>
             <div className={classes.dropdown}>
                 <TextField
-                    id="standard-select"
+                    id="standard-select" 
                     select
+                    required
                     label="Location"
                     value={location}
                     onChange={handleChange}
@@ -79,6 +86,7 @@ return (
                     multiline
                     rowsMax={8}
                     required
+                    value={message}
                     type="text"
                     onInput={ e=>setMessage(e.target.value)}
                 />
@@ -90,6 +98,7 @@ return (
                 >
                 Submit
                 </Button>
+                {showAlert ? <Alert className={classes.alert} severity="success">Success!</Alert> : null}
             </Container>
         </form>
     )

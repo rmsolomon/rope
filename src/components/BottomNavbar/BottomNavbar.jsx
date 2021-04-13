@@ -11,7 +11,7 @@ const BottomNavbar = () => {
     return (
         <BottomNavigation className={classes.root}>
             <Button component={Link} to="/reportbug" variant="contained" type="button" color="primary">
-            <BugReportIcon style={{ fontSize: "40px" }}/>
+                <BugReportIcon style={{ fontSize: "40px" }}/>
             </Button>
         </BottomNavigation>
     )

@@ -11,13 +11,18 @@ export default makeStyles(() => ({
     paddingBottom: '30px',
   },
   dropdown: {
-    paddingTop: '20px',
+    paddingTop: '40px',
   },
   input: {
     display: 'flex',
     justifyContent: 'space-between',
+    paddingTop: '50px',
   },
   button: {
     marginTop: '30px',
+    marginBottom: '30px',
   },
+  alert: {
+    width: '50px',
+  }
 }));
