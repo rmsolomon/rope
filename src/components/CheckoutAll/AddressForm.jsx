@@ -17,14 +17,12 @@ const AddressForm = ({ checkoutToken, next }) => {
     const countries = Object.entries(shippingCountries).map(([code, name]) => ({ id: code, label: name }))
     const subdivisions = Object.entries(shippingSubdivisions).map(([code, name]) => ({ id: code, label: name }))
     const options = shippingOptions.map((sO) => ({ id: sO.id, label: `${sO.description} - (${sO.price.formatted_with_symbol})` }))
-    
-    console.log(shippingOptions);
 
     const fetchShippingCountries = async (checkoutTokenId) => {
         const { countries } = await commerce.services.localeListShippingCountries(checkoutTokenId);
 
         setShippingCountries(countries);
-        setShippingCountry(Object.keys(countries)[0]);
+        setShippingCountry(Object.keys(countries)[2]);
     }
 
     const fetchSubdivisions = async (countryCode) => {
@@ -35,10 +33,14 @@ const AddressForm = ({ checkoutToken, next }) => {
     }
 
     const fetchShippingOptions = async (checkoutTokenId, country, region = null) => {
+        console.log(checkoutTokenId, country, region);
         const options = await commerce.checkout.getShippingOptions(checkoutTokenId, { country, region });
+
+        console.log(options);
 
         setShippingOptions(options);
         setShippingOption(options[0].id);
+
     }
 
     useEffect(() => {
@@ -59,12 +61,24 @@ const AddressForm = ({ checkoutToken, next }) => {
             <FormProvider {...methods}>
                 <form onSubmit={methods.handleSubmit((data) => next({...data, shippingCountry, shippingSubdivision, shippingOption }))}>
                     <Grid container spacing={3}>
+                    <Grid item xs={12} sm={6}>
                         <TextField name='firstName' label='First name' />
+                    </Grid>
+                    <Grid item xs={12} sm={6}>
                         <TextField name='lastName' label='Last name' />
+                        </Grid>
+                    <Grid item xs={12} sm={6}>
                         <TextField name='address1' label='Address' />
+                        </Grid>
+                    <Grid item xs={12} sm={6}>
                         <TextField name='email' label='Email' />
+                        </Grid>
+                    <Grid item xs={12} sm={6}>
                         <TextField name='city' label='City' />
+                        </Grid>
+                    <Grid item xs={12} sm={6}>
                         <TextField name='zip' label='Zip Code' />
+                        </Grid>
                         <Grid item xs={12} sm={6}>
                             <InputLabel>Shipping Country</InputLabel>
                             <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
