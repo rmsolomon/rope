@@ -1,1 +1,1 @@
-# Rope | [Live Site](https://rope-capstone.surge.sh//)
+# Rope | [Live Site](https://rope-capstone.surge.sh/)
