@@ -12,6 +12,7 @@ const App = () => {
 
     const fetchProducts = async () => {
         const { data } = await commerce.products.list();
+
         setProducts(data);
     }
 
@@ -20,46 +21,46 @@ const App = () => {
     }
 
     const handleAddToCart = async (productId, quantity) => {
-        const { cart } = await commerce.cart.add(productId, quantity);
+        const item = await commerce.cart.add(productId, quantity);
 
-        setCart(cart);
-    }
+        setCart(item.cart);
+    };
 
-    const handleUpdateCartQuantity = async (productId, quantity) => {
-        const { cart } = await commerce.cart.update(productId, { quantity });
+    const handleUpdateCartQuantity = async (lineItemId, quantity) => {
+        const response = await commerce.cart.update(lineItemId, { quantity });
+    
+        setCart(response.cart);
+      };
 
-        setCart(cart)
-    }
+      const handleRemoveFromCart = async (lineItemId) => {
+        const response = await commerce.cart.remove(lineItemId);
+    
+        setCart(response.cart);
+      };
 
-    const handleRemoveFromCart = async (productId) => {
-        const { cart } = await commerce.cart.remove(productId);
+      const handleEmptyCart = async () => {
+        const response = await commerce.cart.empty();
+    
+        setCart(response.cart);
+      };
 
-        setCart(cart);
-    }
-
-    const handleEmptyCart = async () => {
-        const { cart } = await commerce.cart.empty();
-
-        setCart(cart);
-    }
-
-    const refreshCart = async () => {
+      const refreshCart = async () => {
         const newCart = await commerce.cart.refresh();
-
+    
         setCart(newCart);
-    }
+      };
 
-    const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
+      const handleCaptureCheckout = async (checkoutTokenId, newOrder) => {
         try {
-            const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder)
-
-            setOrder(incomingOrder);
-            
-            refreshCart();
+          const incomingOrder = await commerce.checkout.capture(checkoutTokenId, newOrder);
+    
+          setOrder(incomingOrder);
+    
+          refreshCart();
         } catch (error) {
-            setErrorMessage(error.data.error.message);
+          setErrorMessage(error.data.error.message);
         }
-    }
+      };
 
     useEffect(() => {
         fetchProducts();
