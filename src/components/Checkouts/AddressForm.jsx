@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { InputLabel, Select, MenuItem, Button, Grid, Typography } from '@material-ui/core';
 import { useForm, FormProvider } from 'react-hook-form';
-import { commerce } from '../../lib/commerce';
 import { Link } from 'react-router-dom';
-import TextField from './CustomTextField';
+import { commerce } from '../../lib/commerce';
+import FormInput from './CustomTextField';
 
-const AddressForm = ({ checkoutToken, next }) => {
+const AddressForm = ({ checkoutToken, test }) => {
     const [shippingCountries, setShippingCountries] = useState([]);
     const [shippingCountry, setShippingCountry] = useState('');
     const [shippingSubdivisions, setShippingSubdivisions] = useState([]);
@@ -45,7 +45,7 @@ const AddressForm = ({ checkoutToken, next }) => {
 
     useEffect(() => {
         fetchShippingCountries(checkoutToken.id)
-    }, []);
+    }, [checkoutToken.id]);
 
     useEffect(() => {
         if(shippingCountry) fetchSubdivisions(shippingCountry);
@@ -53,32 +53,20 @@ const AddressForm = ({ checkoutToken, next }) => {
 
     useEffect(() => {
         if(shippingSubdivision) fetchShippingOptions(checkoutToken.id, shippingCountry, shippingSubdivision);
-    }, [shippingSubdivision]);
+    }, [checkoutToken.id, shippingSubdivision, shippingCountry]);
 
     return (
         <>
             <Typography variant="h6" gutterBottom>Shipping Address</Typography>
             <FormProvider {...methods}>
-                <form onSubmit={methods.handleSubmit((data) => next({...data, shippingCountry, shippingSubdivision, shippingOption }))}>
+                <form onSubmit={methods.handleSubmit((data) => test({...data, shippingCountry, shippingSubdivision, shippingOption }))}>
                     <Grid container spacing={3}>
-                    <Grid item xs={12} sm={6}>
-                        <TextField name='firstName' label='First name' />
-                    </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <TextField name='lastName' label='Last name' />
-                        </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <TextField name='address1' label='Address' />
-                        </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <TextField name='email' label='Email' />
-                        </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <TextField name='city' label='City' />
-                        </Grid>
-                    <Grid item xs={12} sm={6}>
-                        <TextField name='zip' label='Zip Code' />
-                        </Grid>
+                        <FormInput name='firstName' label='First name' />
+                        <FormInput name='lastName' label='Last name' />
+                        <FormInput name='address1' label='Address' />
+                        <FormInput name='email' label='Email' />
+                        <FormInput name='city' label='City' />
+                        <FormInput name='zip' label='Zip Code' />
                         <Grid item xs={12} sm={6}>
                             <InputLabel>Shipping Country</InputLabel>
                             <Select value={shippingCountry} fullWidth onChange={(e) => setShippingCountry(e.target.value)}>
