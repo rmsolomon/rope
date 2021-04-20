@@ -1,4 +1,4 @@
-# CSIS 484 Capstone Project | Rope | [View Site](https://rope-capstone.surge.sh/)
+# CSIS 484 Capstone Project | Rope | [View Site](https://rmsolomon-capstone.surge.sh/)
 
 ## When checking out, you can use the following **Shipping Information** to test the application:
 
