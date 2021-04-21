@@ -23,3 +23,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Optional npm cache directory
+.npm
+
+#vs code
+.vscode
+*.code-workspace
