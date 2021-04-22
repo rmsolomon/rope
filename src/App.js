@@ -16,6 +16,12 @@ const App = () => {
         setProducts(data);
     }
 
+    const outOfStock = async () => {
+        if (commerce.products.inventory.available(0)) {
+            alert('Item out of stock.')
+        }
+    }
+
     const fetchCart = async () => {
         setCart(await commerce.cart.retrieve());
     }
@@ -73,7 +79,7 @@ const App = () => {
                 <Navbar totalItems={cart.total_items} />
                 <Switch>
                     <Route exact path="/">
-                        <Products products={products} onAddToCart={handleAddToCart} />
+                        <Products products={products} outOfStock={outOfStock} onAddToCart={handleAddToCart} />
                     </Route>
                     <Route exact path="/cart">
                         <Cart cart={cart} 
