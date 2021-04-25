@@ -17,7 +17,7 @@ const Navbar = ({ totalItems }) => {
 
   return (
     <div>
-      <AppBar position="fixed" className={classes.AppBar} color="default">
+      <AppBar position="fixed" className={classes.AppBar} elevation={0} color="default">
         <Toolbar>
           <Typography
             component={Link}

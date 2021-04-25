@@ -15,16 +15,15 @@ const BottomNavbar = () => {
         <Button
           component={Link}
           to="/reportbug"
-          classes={classes.button}
+          classes={classes.reportbug}
           variant="contained"
           type="button"
-          color="primary"
         >
-          <BugReportIcon style={{ fontSize: "40px" }} />
+          <BugReportIcon style={{ fontSize: "20px" }} />
         </Button>
-        <div className="logo">
+        <a className="stripe" href="https://stripe.com/" target="_blank" rel="noreferrer">
           <img src={logo} alt="logo" width="130" height="65" />
-        </div>
+          </a>
       </div>
     </BottomNavigation>
   );

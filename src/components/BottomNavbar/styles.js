@@ -8,6 +8,6 @@ export default makeStyles((theme) => ({
     alignItems: "center",
     position: "fixed",
     bottom: "0",
-    backgroundColor: "#232b36",
+    backgroundColor: "#F5F5F5",
   },
 }));

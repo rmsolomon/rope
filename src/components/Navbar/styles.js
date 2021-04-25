@@ -2,7 +2,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 export default makeStyles((theme) => ({
   appBar: {
-    boxShadow: "none",
+    backgroundColor: "#393e46",
     [theme.breakpoints.up("sm")]: {
       width: `calc(100% - 0px)`,
       marginLeft: 0,
