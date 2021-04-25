@@ -16,6 +16,7 @@ const App = () => {
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
+  const [setShowInventory] = React.useState(false);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -23,17 +24,20 @@ const App = () => {
     setProducts(data);
   };
 
-  const outOfStock = async () => {
-    if (commerce.products.inventory.available(0)) {
-      alert("Item out of stock.");
-    }
-  };
-
   const fetchCart = async () => {
     setCart(await commerce.cart.retrieve());
   };
 
   const handleAddToCart = async (productId, quantity) => {
+    const product = await commerce.products.retrieve(productId);
+    if (!product.inventory.available) {
+      setShowInventory(true);
+      setTimeout(function () {
+        setShowInventory(false);
+      }, 3000);
+    }
+    console.log(product);
+
     const item = await commerce.cart.add(productId, quantity);
 
     setCart(item.cart);
@@ -91,7 +95,6 @@ const App = () => {
           <Route exact path="/">
             <Products
               products={products}
-              outOfStock={outOfStock}
               onAddToCart={handleAddToCart}
             />
           </Route>

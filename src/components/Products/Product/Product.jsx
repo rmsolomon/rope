@@ -8,6 +8,7 @@ import {
   IconButton,
 } from "@material-ui/core";
 import { AddShoppingCart } from "@material-ui/icons";
+import Alert from "@material-ui/lab/Alert";
 
 import useStyles from "./styles";
 
@@ -37,12 +38,20 @@ const Product = ({ product, onAddToCart }) => {
         />
       </CardContent>
       <CardActions disableSpacing className={classes.CardActions}>
-        <IconButton
-          aria-label="Add to Cart"
-          onClick={() => onAddToCart(product.id, 1)}
-        >
-          <AddShoppingCart />
-        </IconButton>
+        {product.inventory.available ? (
+          <IconButton
+            aria-label="Add to Cart"
+            onClick={() => onAddToCart(product.id, 1)}
+            disabled={!product.inventory.available}
+          >
+            <AddShoppingCart />
+          </IconButton>
+        ) : null}
+        {!product.inventory.available ? (
+          <Alert className={classes.alert} severity="warning">
+            Out of Stock.
+          </Alert>
+        ) : null}
       </CardActions>
     </Card>
   );
