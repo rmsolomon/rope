@@ -8,7 +8,6 @@ import {
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
 import { Link, useLocation } from "react-router-dom";
-import rope from "../../assets/rope.svg";
 import useStyles from "./styles";
 
 const Navbar = ({ totalItems }) => {
@@ -32,7 +31,7 @@ const Navbar = ({ totalItems }) => {
             color="inherit"
           >
             <img
-              src={rope}
+              src={process.env.PUBLIC_URL + "rope.svg"}
               alt="rope"
               height="50px"
               className={classes.image}
