@@ -36,7 +36,6 @@ const App = () => {
         setShowInventory(false);
       }, 3000);
     }
-    console.log(product);
 
     const item = await commerce.cart.add(productId, quantity);
 

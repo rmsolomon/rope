@@ -70,7 +70,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
           </Typography>
           <Divider className={classes.divider} />
           <Typography variant="subtitle2">
-            Order ref: {order.customer_reference}
+            Order #: {order.customer_reference}
           </Typography>
         </div>
         <br />
