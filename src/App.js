@@ -92,10 +92,7 @@ const App = () => {
         <Navbar totalItems={cart.total_items} />
         <Switch>
           <Route exact path="/">
-            <Products
-              products={products}
-              onAddToCart={handleAddToCart}
-            />
+            <Products products={products} onAddToCart={handleAddToCart} />
           </Route>
           <Route exact path="/cart">
             <Cart

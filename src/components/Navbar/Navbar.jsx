@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 import { ShoppingCart } from "@material-ui/icons";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/rope-icon.svg";
+import rope from "../../assets/rope.svg";
 import useStyles from "./styles";
 
 const Navbar = ({ totalItems }) => {
@@ -17,7 +17,12 @@ const Navbar = ({ totalItems }) => {
 
   return (
     <div>
-      <AppBar position="fixed" className={classes.AppBar} elevation={0} color="default">
+      <AppBar
+        position="fixed"
+        className={classes.AppBar}
+        elevation={0}
+        color="default"
+      >
         <Toolbar>
           <Typography
             component={Link}
@@ -27,7 +32,7 @@ const Navbar = ({ totalItems }) => {
             color="inherit"
           >
             <img
-              src={logo}
+              src={rope}
               alt="rope"
               height="50px"
               className={classes.image}
