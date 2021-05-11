@@ -15,4 +15,9 @@ export default makeStyles((theme) => ({
   grow: {
     flexGrow: 1,
   },
+  links: {
+    textDecoration: "none",
+    fontWeight: "700",
+    padding: "0px 10px 0px 10px",
+  }
 }));
