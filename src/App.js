@@ -8,6 +8,9 @@ import {
   Checkout,
   BottomNavbar,
   ReportBug,
+  About,
+  FAQ,
+  Contact,
 } from "./components";
 import "./App.css";
 
@@ -109,6 +112,15 @@ const App = () => {
               onCaptureCheckout={handleCaptureCheckout}
               error={errorMessage}
             />
+          </Route>
+          <Route exact path="/about">
+            <About></About>
+          </Route>
+          <Route exact path="/faq">
+            <FAQ></FAQ>
+          </Route>
+          <Route exact path="/contact">
+            <Contact></Contact>
           </Route>
           <Route exact path="/reportbug">
             <ReportBug />

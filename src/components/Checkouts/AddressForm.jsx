@@ -25,9 +25,9 @@ const AddressForm = ({ checkoutToken, test }) => {
     id: code,
     label: name,
   }));
-  const subdivisions = Object.entries(
-    shippingSubdivisions
-  ).map(([code, name]) => ({ id: code, label: name }));
+  const subdivisions = Object.entries(shippingSubdivisions).map(
+    ([code, name]) => ({ id: code, label: name })
+  );
   const options = shippingOptions.map((sO) => ({
     id: sO.id,
     label: `${sO.description} - (${sO.price.formatted_with_symbol})`,

@@ -37,17 +37,14 @@ const Navbar = ({ totalItems }) => {
             />
           </Typography>
           <div className={classes.grow} />
-          {location.pathname === "/" && (
-            
-            <div className={classes.button}>
-                        <Typography
+          <Typography
             component={Link}
             variant="h6"
             className={classes.links}
             to="/about"
             color="inherit"
           >
-            About
+            About Us
           </Typography>
           <Typography
             component={Link}
@@ -56,7 +53,7 @@ const Navbar = ({ totalItems }) => {
             to="/faq"
             color="inherit"
           >
-            FAQ
+            FAQs
           </Typography>
           <Typography
             component={Link}
@@ -67,6 +64,8 @@ const Navbar = ({ totalItems }) => {
           >
             Contact Us
           </Typography>
+          {location.pathname === "/" && (
+            <div className={classes.button}>
               <IconButton
                 component={Link}
                 to="/cart"

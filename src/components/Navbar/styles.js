@@ -17,7 +17,7 @@ export default makeStyles((theme) => ({
   },
   links: {
     textDecoration: "none",
-    fontWeight: "700",
+    fontWeight: "600",
     padding: "0px 10px 0px 10px",
-  }
+  },
 }));
