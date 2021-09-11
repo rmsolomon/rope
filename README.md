@@ -38,8 +38,7 @@
 
 -->
 
-## Built with:
-
+Built with:
 [React.js](http://reactjs.com) **|** 
 [Material-UI](https://material-ui.com/) **|** 
 [Commerce.js](http://commercejs.com) **|** 
