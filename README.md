@@ -40,10 +40,10 @@
 
 ## Built with:
 
-### [React.js](http://reactjs.com)
+### [React.js](http://reactjs.com) **|** 
 
-### [Material-UI](https://material-ui.com/)
+### [Material-UI](https://material-ui.com/) **|** 
 
-### [Commerce.js](http://commercejs.com)
+### [Commerce.js](http://commercejs.com) **|** 
 
 ### [Stripe](http://stripe.com)
