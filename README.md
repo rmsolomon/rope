@@ -1,4 +1,6 @@
-# CSIS 484 Capstone Project | Rope | [View Site](https://rmsolomon.github.io/rope/)
+# CSIS 484 Capstone Project | [View Site](https://rmsolomon.github.io/rope/)
+
+<!--
 
 ## When checking out, you can use the following **Shipping Information** to test the application:
 
@@ -33,6 +35,8 @@
 ### ZIP: `42424`
 
 ---
+
+-->
 
 ## Built with:
 
