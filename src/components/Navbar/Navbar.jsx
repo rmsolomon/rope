@@ -1,4 +1,6 @@
 import React from "react";
+import rope from "../../assets/rope.svg";
+
 import {
   AppBar,
   Toolbar,
@@ -29,12 +31,7 @@ const Navbar = ({ totalItems }) => {
             className={classes.title}
             color="inherit"
           >
-            <img
-              src={process.env.PUBLIC_URL + "rope.svg"}
-              alt="rope"
-              height="50px"
-              className={classes.image}
-            />
+            <img src={rope} alt="logo" width="130" height="65" />
           </Typography>
           <div className={classes.grow} />
           <Typography
