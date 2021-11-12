@@ -1,4 +1,4 @@
-# CSIS 484 Capstone Project | [View Site](https://rmsolomon.github.io/rope/)
+# CSIS 484 Capstone Project | [View Site](https://mitchellsolomon.github.io/rope/)
 
 <!--
 
