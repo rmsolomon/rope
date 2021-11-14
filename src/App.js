@@ -35,9 +35,6 @@ const App = () => {
     const product = await commerce.products.retrieve(productId);
     if (!product.inventory.available) {
       setShowInventory(true);
-      setTimeout(function () {
-        setShowInventory(false);
-      }, 3000);
     }
 
     const item = await commerce.cart.add(productId, quantity);

@@ -55,9 +55,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
   };
 
   const timeout = () => {
-    setTimeout(() => {
       setIsFinished(true);
-    }, 0);
   };
 
   let Confirmation = () =>

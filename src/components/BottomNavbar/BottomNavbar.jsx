@@ -19,7 +19,7 @@ const BottomNavbar = () => {
           variant="outlined"
           type="button"
         >
-          <BugReportIcon style={{ fontSize: "20px" }} />
+          <BugReportIcon style={{ fontSize: "18px" }} />
         </Button>
         <a
           href="https://stripe.com/"
