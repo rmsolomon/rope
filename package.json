@@ -1,7 +1,6 @@
 {
   "name": "rope",
   "private": true,
-  "homepage": "https://rope-mitchellsolomon.vercel.app/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

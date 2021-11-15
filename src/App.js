@@ -87,7 +87,7 @@ const App = () => {
   }, []);
 
   return (
-    <Router basename="/">
+    <Router basename="">
       <div>
         <Navbar totalItems={cart.total_items} />
         <Switch>
