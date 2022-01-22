@@ -1,4 +1,4 @@
-# CSIS 484 Capstone Project | [View Site]()
+# CSIS 484 Capstone Project
 
 <!--
 
