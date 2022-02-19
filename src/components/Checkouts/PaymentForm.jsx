@@ -7,6 +7,7 @@ import {
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import Review from "./Review";
+import Alert from "@material-ui/lab/Alert";
 
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
@@ -92,8 +93,17 @@ const PaymentForm = ({
           )}
         </ElementsConsumer>
       </Elements>
+      <Alert className={alert} style={{marginTop: "25px"}} severity="info">
+            This payment form is using a sandbox gateway. No money will be charged to any credit card. Enter 4242 repeatedly to test payment.
+      </Alert>
     </>
   );
+};
+
+const alert = {
+  width: "10%",
+  display: "flex",
+  justifyContent: "center",
 };
 
 export default PaymentForm;
