@@ -12,7 +12,7 @@ import {
   FAQ,
   Contact,
 } from "./components";
-import "./App.css";
+import "./index.css";
 
 const App = () => {
   const [products, setProducts] = useState([]);
