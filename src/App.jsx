@@ -89,7 +89,7 @@ const App = () => {
   return (
     <Router basename="">
       <div>
-        <Navbar totalItems={cart && cart.total_items ? cart.total_items : undefined} />
+        <Navbar totalItems={cart.total_items} />
           <Route exact path="/">
             <Products products={products} onAddToCart={handleAddToCart} />
           </Route>
