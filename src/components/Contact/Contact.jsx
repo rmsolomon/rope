@@ -1,6 +1,6 @@
+import Alert from "@mui/lab/Alert";
+import { Button, Container, TextField, Typography } from "@mui/material";
 import React from "react";
-import { Button, Typography, TextField, Container } from "@material-ui/core";
-import Alert from "@material-ui/lab/Alert";
 
 import useStyles from "./styles";
 
@@ -40,7 +40,7 @@ const Contact = () => {
           label="Your message"
           variant="outlined"
           multiline
-          rowsMax={8}
+          rowsmax={8}
           required
           value={message}
           type="text"

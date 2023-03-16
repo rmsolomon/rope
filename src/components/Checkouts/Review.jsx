@@ -1,5 +1,5 @@
+import { List, ListItem, ListItemText, Typography } from "@mui/material";
 import React from "react";
-import { Typography, List, ListItem, ListItemText } from "@material-ui/core";
 
 const Review = ({ checkoutToken }) => {
   return (

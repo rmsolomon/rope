@@ -1,12 +1,9 @@
-import React from "react";
+import Alert from "@mui/lab/Alert";
 import {
-  Button,
-  Typography,
-  MenuItem,
-  TextField,
-  Container,
-} from "@material-ui/core";
-import Alert from "@material-ui/lab/Alert";
+  Button, Container, MenuItem,
+  TextField, Typography
+} from "@mui/material";
+import React from "react";
 
 import useStyles from "./styles";
 
@@ -101,7 +98,7 @@ const ReportBug = () => {
           label="Your message"
           variant="outlined"
           multiline
-          rowsMax={8}
+          rowsmax={8}
           required
           value={message}
           type="text"

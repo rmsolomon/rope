@@ -1,6 +1,6 @@
-import React from "react";
 import { BottomNavigation, Button } from "@material-ui/core";
-import BugReportIcon from "@material-ui/icons/BugReport";
+import BugReportIcon from '@mui/icons-material/BugReport';
+import React from "react";
 import { Link } from "react-router-dom";
 import stripe from "../../assets/stripe.svg";
 

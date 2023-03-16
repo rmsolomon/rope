@@ -1,15 +1,8 @@
-import React, { useState, useEffect } from "react";
 import {
-  CssBaseline,
-  Paper,
-  Stepper,
-  Step,
-  StepLabel,
-  Typography,
-  CircularProgress,
-  Divider,
-  Button,
-} from "@material-ui/core";
+  Button, CircularProgress, CssBaseline, Divider, Paper, Step,
+  StepLabel, Stepper, Typography
+} from "@mui/material";
+import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 
 import { commerce } from "../../../lib/commerce";

@@ -1,5 +1,5 @@
+import { Typography } from "@mui/material";
 import React from "react";
-import { Typography } from "@material-ui/core";
 import useStyles from "./styles";
 
 const About = () => {

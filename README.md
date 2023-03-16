@@ -24,7 +24,7 @@
 
 ---
 
-## When you are entering the **Payment Infromation**, you can just type `4` and `2` back and forth until you reach the end of the Zip Code. (These payment details are the default testing details for Stripe).
+## When you are entering the **Payment Information**, you can just type `4` and `2` back and forth until you reach the end of the Zip Code. (These payment details are the default testing details for Stripe).
 
 ### Card number: `4242 4242 4242 4242`
 

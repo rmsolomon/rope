@@ -1,15 +1,13 @@
-import React from "react";
-import { Typography, Button, Divider } from "@material-ui/core";
+import Alert from "@mui/lab/Alert";
+import { Button, Divider, Typography } from "@mui/material";
 import {
-  Elements,
-  CardElement,
-  ElementsConsumer,
+  CardElement, Elements, ElementsConsumer
 } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
+import React from "react";
 import Review from "./Review";
-import Alert from "@material-ui/lab/Alert";
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+const stripePromise = loadStripe(import.meta.env.VITE_REACT_APP_STRIPE_PUBLIC_KEY);
 
 const PaymentForm = ({
   checkoutToken,

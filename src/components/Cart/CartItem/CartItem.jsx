@@ -1,12 +1,8 @@
-import React from "react";
 import {
-  Typography,
-  Card,
-  CardActions,
-  CardMedia,
-  CardContent,
-  Button,
-} from "@material-ui/core";
+  Button, Card,
+  CardActions, CardContent, CardMedia, Typography
+} from "@mui/material";
+import React from "react";
 
 import useStyles from "./styles";
 
@@ -15,7 +11,7 @@ const CartItem = ({ item, onUpdateCartQuantity, onRemoveFromCart }) => {
   return (
     <Card>
       <CardMedia
-        image={item.media.source}
+        image={item.image.url}
         alt={item.name}
         className={classes.media}
       />

@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { commerce } from "./lib/commerce";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import {
-  Products,
-  Navbar,
+  About,
+  BottomNavbar,
   Cart,
   Checkout,
-  BottomNavbar,
-  ReportBug,
-  About,
-  FAQ,
   Contact,
+  FAQ,
+  Navbar,
+  Products,
+  ReportBug
 } from "./components";
 import "./index.css";
+import { commerce } from "./lib/commerce";
 
 const App = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
-  const [setShowInventory] = React.useState(false);
+  const [setShowInventory] = useState(false);
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -89,8 +89,7 @@ const App = () => {
   return (
     <Router basename="">
       <div>
-        <Navbar totalItems={cart.total_items} />
-        <Switch>
+        <Navbar totalItems={cart && cart.total_items ? cart.total_items : undefined} />
           <Route exact path="/">
             <Products products={products} onAddToCart={handleAddToCart} />
           </Route>
@@ -122,7 +121,6 @@ const App = () => {
           <Route exact path="/reportbug">
             <ReportBug />
           </Route>
-        </Switch>
         <BottomNavbar />
       </div>
     </Router>

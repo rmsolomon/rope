@@ -1,8 +1,8 @@
+import { Button, Container, Grid, Typography } from "@mui/material";
 import React from "react";
-import { Container, Typography, Button, Grid } from "@material-ui/core";
 import { Link } from "react-router-dom";
-import useStyles from "./styles";
 import CartItem from "./CartItem/CartItem";
+import useStyles from "./styles";
 
 const Cart = ({
   cart,

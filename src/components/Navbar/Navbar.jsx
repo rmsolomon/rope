@@ -1,14 +1,10 @@
 import React from "react";
 import rope from "../../assets/rope.svg";
 
+import { ShoppingCart } from "@mui/icons-material";
 import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Badge,
-  Typography,
-} from "@material-ui/core";
-import { ShoppingCart } from "@material-ui/icons";
+  AppBar, Badge, IconButton, Toolbar, Typography
+} from "@mui/material";
 import { Link, useLocation } from "react-router-dom";
 import useStyles from "./styles";
 

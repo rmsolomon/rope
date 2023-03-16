@@ -1,6 +1,7 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-export default makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => (
+  {
   appBar: {
     backgroundColor: "#393e46",
     [theme.breakpoints.up("sm")]: {
@@ -21,3 +22,5 @@ export default makeStyles((theme) => ({
     padding: "0px 10px 0px 10px",
   },
 }));
+
+export default useStyles;

@@ -1,5 +1,5 @@
+import { CircularProgress, Grid } from "@mui/material";
 import React from "react";
-import { Grid, CircularProgress } from "@material-ui/core";
 
 import Product from "./Product/Product";
 import useStyles from "./styles";
