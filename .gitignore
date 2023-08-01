@@ -7,7 +7,7 @@
 /coverage
 
 # production
-/build
+# /build
 
 # mac Files
 .DS_Store
