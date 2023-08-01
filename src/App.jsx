@@ -1,5 +1,6 @@
+import { ThemeProvider, createTheme } from "@mui/material/styles"; // Import ThemeProvider and createTheme
 import React, { useEffect, useState } from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import {
   About,
   BottomNavbar,
@@ -20,6 +21,10 @@ const App = () => {
   const [order, setOrder] = useState({});
   const [errorMessage, setErrorMessage] = useState("");
   const [setShowInventory] = useState(false);
+
+  const theme = createTheme({
+    // Your theme configuration goes here
+  });
 
   const fetchProducts = async () => {
     const { data } = await commerce.products.list();
@@ -88,7 +93,7 @@ const App = () => {
 
   return (
     <Router basename="">
-      <div>
+        <ThemeProvider theme={theme}>
         <Navbar totalItems={cart.total_items} />
           <Route exact path="/">
             <Products products={products} onAddToCart={handleAddToCart} />
@@ -122,7 +127,7 @@ const App = () => {
             <ReportBug />
           </Route>
         <BottomNavbar />
-      </div>
+      </ThemeProvider>
     </Router>
   );
 };

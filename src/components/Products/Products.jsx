@@ -17,9 +17,6 @@ const Products = ({ products, onAddToCart }) => {
           </Grid>
         ))}
       </Grid>
-      <div className={classes.spinner}>
-        <CircularProgress />
-      </div>
     </main>
   );
 };

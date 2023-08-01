@@ -1,8 +1,8 @@
-import Alert from "@mui/lab/Alert";
 import {
   Button, Container, MenuItem,
   TextField, Typography
 } from "@mui/material";
+import Alert from "@mui/material/Alert";
 import React from "react";
 
 import useStyles from "./styles";

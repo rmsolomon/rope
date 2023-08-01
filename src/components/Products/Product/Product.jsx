@@ -1,8 +1,8 @@
 import { AddShoppingCart } from "@mui/icons-material";
-import Alert from "@mui/lab/Alert";
 import {
   Card, CardActions, CardContent, CardMedia, IconButton, Typography
 } from "@mui/material";
+import Alert from "@mui/material/Alert";
 import React from "react";
 
 import useStyles from "./styles";

@@ -1,5 +1,5 @@
-import Alert from "@mui/lab/Alert";
 import { Button, Divider, Typography } from "@mui/material";
+import Alert from "@mui/material/Alert";
 import {
   CardElement, Elements, ElementsConsumer
 } from "@stripe/react-stripe-js";
